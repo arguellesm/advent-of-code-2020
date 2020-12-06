@@ -1,2 +1,4 @@
-# advent-of-code-2020
-Solved advent of code challenges in python.
+# Advent of Code 2020
+
+Personal solutions for [Advent of Code](https://adventofcode.com/2020) challenges in Python :snail:.
+ 
