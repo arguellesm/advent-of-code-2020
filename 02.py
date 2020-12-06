@@ -19,12 +19,9 @@ def part_one(lines):
 	num_valid = 0
 
 	for line in lines:
-		parsed = split(r'[-: ]+', line)
+		min, max, letter, pasw = split(r'[-: ]+', line)
 
-		min  = int(parsed[0])
-		max  = int(parsed[1])+1 
-
-		if parsed[3].count(parsed[2]) in range(min,max):
+		if pasw.count(letter) in range(int(min),int(max)+1):
 			num_valid += 1
 
 	return num_valid
@@ -35,14 +32,10 @@ def part_two(lines):
 	num_valid = 0
 
 	for line in lines:
-		parsed = split(r'[-: ]+', line)
-
-		pos1 = int(parsed[0])-1
-		pos2 = int(parsed[1])-1
-		pasw = parsed[3]
+		pos1, pos2, letter, pasw = split(r'[-: ]+', line)
 		
-		con1 = pasw[pos1] == parsed[2]
-		con2 = pasw[pos2] == parsed[2]
+		con1 = pasw[int(pos1)-1] == letter
+		con2 = pasw[int(pos2)-1] == letter
 
 		if (con1 and not con2) or (not con1 and con2):
 			num_valid += 1
